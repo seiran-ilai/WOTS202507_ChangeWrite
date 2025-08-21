@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>煙硝絮語2025/07交換寫</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Microsoft YaHei', Arial, sans-serif;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+            border: 1px solid #e9ecef;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #495057;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+        
+        .instructions {
+            background: #f8f9fa;
+            border-left: 4px solid #6c757d;
+            padding: 15px;
+            margin-bottom: 30px;
+            border-radius: 5px;
+        }
+        
+        .instructions h3 {
+            color: #495057;
+            margin-bottom: 10px;
+        }
+        
+        .instructions p {
+            margin: 5px 0;
+            color: #6c757d;
+        }
+        
+        .section {
+            margin-bottom: 40px;
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border: 1px solid #e9ecef;
+        }
+        
+        .section-title {
+            font-size: 1.4em;
+            color: #495057;
+            margin-bottom: 20px;
+            border-left: 4px solid #6c757d;
+            padding-left: 15px;
+            font-weight: 400;
+        }
+        
+        .doc-buttons {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .doc-btn {
+            padding: 12px 20px;
+            border: 2px solid #6c757d;
+            background: linear-gradient(45deg, #f8f9fa, #e9ecef);
+            color: #495057;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        
+        .doc-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(108, 117, 125, 0.3);
+            background: linear-gradient(45deg, #e9ecef, #dee2e6);
+        }
+        
+        .doc-btn.active {
+            background: linear-gradient(45deg, #6c757d, #495057);
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        .preview-controls {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+            padding: 10px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border: 1px solid #e9ecef;
+        }
+        
+        .height-control {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .height-slider {
+            width: 150px;
+            height: 4px;
+            border-radius: 5px;
+            background: #ddd;
+            outline: none;
+            cursor: pointer;
+        }
+        
+        .height-slider::-webkit-slider-thumb {
+            appearance: none;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: #6c757d;
+            cursor: pointer;
+        }
+        
+        .height-slider::-moz-range-thumb {
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: #6c757d;
+            cursor: pointer;
+            border: none;
+        }
+        
+        .height-display {
+            min-width: 60px;
+            font-weight: 600;
+            color: #6c757d;
+        }
+        
+        .preset-buttons {
+            display: flex;
+            gap: 5px;
+        }
+        
+        .preset-btn {
+            padding: 4px 8px;
+            border: 1px solid #6c757d;
+            background: white;
+            color: #6c757d;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+            transition: all 0.3s ease;
+        }
+        
+        .preset-btn:hover {
+            background: #6c757d;
+            color: white;
+        }
+        
+        .preview-box {
+            width: 100%;
+            height: 300px;
+            border: 2px solid #e1e5e9;
+            border-radius: 10px;
+            padding: 20px;
+            background: #f8f9fa;
+            font-size: 16px;
+            line-height: 1.6;
+            overflow-y: auto;
+            margin-top: 15px;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            transition: height 0.3s ease;
+        }
+        
+        .answer-buttons {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .answer-btn {
+            padding: 10px 15px;
+            border: 2px solid #6c757d;
+            background: white;
+            color: #6c757d;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 14px;
+        }
+        
+        .answer-btn:hover {
+            background: #6c757d;
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        .answer-btn.selected {
+            background: #6c757d;
+            color: white;
+        }
+        
+        .results-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            border: 2px solid #dee2e6;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .results-table th {
+            background: linear-gradient(45deg, #6c757d, #495057);
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-weight: 600;
+        }
+        
+        .results-table td {
+            padding: 12px;
+            border-bottom: 1px solid #dee2e6;
+            text-align: center;
+            background: white;
+        }
+        
+        .results-table tr:hover td {
+            background: #f8f9fa;
+        }
+        
+        .copy-btn {
+            background: linear-gradient(45deg, #6c757d, #495057);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            margin: 20px auto;
+            display: block;
+            transition: all 0.3s ease;
+        }
+        
+        .copy-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(108, 117, 125, 0.4);
+        }
+        
+        .clickable-cell {
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .clickable-cell:hover {
+            background: #f8f9fa !important;
+            color: #495057;
+        }
+        
+        .clickable-cell::after {
+            content: '點選填入';
+            position: absolute;
+            top: 50%;
+            right: 5px;
+            transform: translateY(-50%);
+            font-size: 10px;
+            color: #999;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .clickable-cell:hover::after {
+            opacity: 1;
+        }
+        
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #6c757d;
+            color: white;
+            padding: 15px 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+            transform: translateX(400px);
+            transition: transform 0.3s ease;
+            z-index: 1000;
+        }
+        
+        .notification.show {
+            transform: translateX(0);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>煙硝絮語2025/07交換寫</h1>
+        
+        <div class="instructions">
+            <h3>📋 使用說明</h3>
+            <p>1. 點選文檔按鈕查看內容</p>
+            <p>2. 選擇作者名稱</p>
+            <p>3. 點選表格中的欄位填入答案</p>
+            <p>4. 點擊「複製答案」獲取結果</p>
+        </div>
+        
+        <!-- 第一區塊：選擇大綱 -->
+        <div class="section">
+            <h2 class="section-title">1. 請選擇你要看的大綱</h2>
+            <div class="doc-buttons">
+                <button class="doc-btn" onclick="selectDocument('委託臨演')">委託臨演</button>
+                <button class="doc-btn" onclick="selectDocument('山中避暑')">山中避暑</button>
+                <button class="doc-btn" onclick="selectDocument('暫居戀曲')">暫居戀曲</button>
+                <button class="doc-btn" onclick="selectDocument('辨識錯誤：Code Noise')">辨識錯誤：Code Noise</button>
+            </div>
+            <div class="doc-buttons">
+                <button class="doc-btn" onclick="selectDocument('第十四分隊VS夜梟總部+店長的反恐訓練')">第十四分隊VS夜梟總部+店長的反恐訓練</button>
+                <button class="doc-btn" onclick="selectDocument('海上名流派對的潛入委託')">海上名流派對的潛入委託</button>
+                <button class="doc-btn" onclick="selectDocument('范姜浩的店長觀察日記')">范姜浩的店長觀察日記</button>
+            </div>
+            <div class="preview-controls">
+                <span>📏 預覽框高度：</span>
+                <div class="height-control">
+                    <input type="range" id="heightSlider1" class="height-slider" min="200" max="800" value="300" oninput="adjustPreviewHeight(1, this.value)">
+                    <span class="height-display" id="heightDisplay1">300px</span>
+                </div>
+                <div class="preset-buttons">
+                    <button class="preset-btn" onclick="setPreviewHeight(1, 200)">小</button>
+                    <button class="preset-btn" onclick="setPreviewHeight(1, 300)">中</button>
+                    <button class="preset-btn" onclick="setPreviewHeight(1, 500)">大</button>
+                    <button class="preset-btn" onclick="setPreviewHeight(1, 700)">超大</button>
+                </div>
+            </div>
+            <div class="preview-box" id="preview1">請選擇一個文檔來預覽其大綱內容...</div>
+        </div>
+        
+        <!-- 第二區塊：選擇正文 -->
+        <div class="section">
+            <h2 class="section-title">2. 請選擇你要看的正文</h2>
+            <div class="doc-buttons">
+                <button class="doc-btn" onclick="selectDocument2('委託臨演')">委託臨演</button>
+                <button class="doc-btn" onclick="selectDocument2('山中避暑')">山中避暑</button>
+                <button class="doc-btn" onclick="selectDocument2('暫居戀曲')">暫居戀曲</button>
+                <button class="doc-btn" onclick="selectDocument2('辨識錯誤：Code Noise')">辨識錯誤：Code Noise</button>
+            </div>
+            <div class="doc-buttons">
+                <button class="doc-btn" onclick="selectDocument2('第十四分隊VS夜梟總部+店長的反恐訓練')">第十四分隊VS夜梟總部+店長的反恐訓練</button>
+                <button class="doc-btn" onclick="selectDocument2('海上名流派對的潛入委託')">海上名流派對的潛入委託</button>
+                <button class="doc-btn" onclick="selectDocument2('范姜浩的店長觀察日記')">范姜浩的店長觀察日記</button>
+            </div>
+            <div class="preview-controls">
+                <span>📏 預覽框高度：</span>
+                <div class="height-control">
+                    <input type="range" id="heightSlider2" class="height-slider" min="200" max="800" value="300" oninput="adjustPreviewHeight(2, this.value)">
+                    <span class="height-display" id="heightDisplay2">300px</span>
+                </div>
+                <div class="preset-buttons">
+                    <button class="preset-btn" onclick="setPreviewHeight(2, 200)">小</button>
+                    <button class="preset-btn" onclick="setPreviewHeight(2, 300)">中</button>
+                    <button class="preset-btn" onclick="setPreviewHeight(2, 500)">大</button>
+                    <button class="preset-btn" onclick="setPreviewHeight(2, 700)">超大</button>
+                </div>
+            </div>
+            <div class="preview-box" id="preview2">請選擇一個文檔來預覽其正文內容...</div>
+        </div>
+        
+        <!-- 第三區塊：選擇答案 -->
+        <div class="section">
+            <h2 class="section-title">3. 請填寫你的答案</h2>
+            <div class="answer-buttons">
+                <button class="answer-btn" onclick="selectAnswer('尹賴')">尹賴</button>
+                <button class="answer-btn" onclick="selectAnswer('小線蕨')">小線蕨</button>
+                <button class="answer-btn" onclick="selectAnswer('竹悠')">竹悠</button>
+                <button class="answer-btn" onclick="selectAnswer('月下薰子')">月下薰子</button>
+                <button class="answer-btn" onclick="selectAnswer('花卡')">花卡</button>
+                <button class="answer-btn" onclick="selectAnswer('落花')">落花</button>
+                <button class="answer-btn" onclick="selectAnswer('平')">平</button>
+            </div>
+            
+            <table class="results-table">
+                <thead>
+                    <tr>
+                        <th>文檔標題</th>
+                        <th>大綱</th>
+                        <th>正文</th>
+                    </tr>
+                </thead>
+                <tbody id="resultsTable">
+                    <tr>
+                        <td>委託臨演</td>
+                        <td id="outline1" class="clickable-cell" onclick="fillAnswer(1, 'outline')">-</td>
+                        <td id="content1" class="clickable-cell" onclick="fillAnswer(1, 'content')">-</td>
+                    </tr>
+                    <tr>
+                        <td>山中避暑</td>
+                        <td id="outline2" class="clickable-cell" onclick="fillAnswer(2, 'outline')">-</td>
+                        <td id="content2" class="clickable-cell" onclick="fillAnswer(2, 'content')">-</td>
+                    </tr>
+                    <tr>
+                        <td>暫居戀曲</td>
+                        <td id="outline3" class="clickable-cell" onclick="fillAnswer(3, 'outline')">-</td>
+                        <td id="content3" class="clickable-cell" onclick="fillAnswer(3, 'content')">-</td>
+                    </tr>
+                    <tr>
+                        <td>范姜浩的店長觀察日記</td>
+                        <td id="outline4" class="clickable-cell" onclick="fillAnswer(4, 'outline')">-</td>
+                        <td id="content4" class="clickable-cell" onclick="fillAnswer(4, 'content')">-</td>
+                    </tr>
+                    <tr>
+                        <td>辨識錯誤：Code Noise</td>
+                        <td id="outline5" class="clickable-cell" onclick="fillAnswer(5, 'outline')">-</td>
+                        <td id="content5" class="clickable-cell" onclick="fillAnswer(5, 'content')">-</td>
+                    </tr>
+                    <tr>
+                        <td>海上名流派對的潛入委託</td>
+                        <td id="outline6" class="clickable-cell" onclick="fillAnswer(6, 'outline')">-</td>
+                        <td id="content6" class="clickable-cell" onclick="fillAnswer(6, 'content')">-</td>
+                    </tr>
+                    <tr>
+                        <td>第十四分隊VS夜梟總部+店長的反恐訓練</td>
+                        <td id="outline7" class="clickable-cell" onclick="fillAnswer(7, 'outline')">-</td>
+                        <td id="content7" class="clickable-cell" onclick="fillAnswer(7, 'content')">-</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <button class="copy-btn" onclick="copyResults()">📋 複製答案</button>
+        </div>
+    </div>
+    
+    <div class="notification" id="notification">✅ 答案已複製到剪貼簿！</div>
+
+    <script>
+        let currentAnswer = '';
+        let answers = {};
+        
+        // 文檔名稱映射
+        const docNames = {
+            1: '委託臨演',
+            2: '山中避暑', 
+            3: '暫居戀曲',
+            4: '范姜浩的店長觀察日記',
+            5: '辨識錯誤：Code Noise',
+            6: '海上名流派對的潛入委託',
+            7: '第十四分隊VS夜梟總部+店長的反恐訓練'
+        };
+        
+        // 調整預覽框高度
+        function adjustPreviewHeight(previewNum, height) {
+            const previewBox = document.getElementById(`preview${previewNum}`);
+            const heightDisplay = document.getElementById(`heightDisplay${previewNum}`);
+            
+            previewBox.style.height = height + 'px';
+            heightDisplay.textContent = height + 'px';
+        }
+        
+        // 設定預設高度
+        function setPreviewHeight(previewNum, height) {
+            const slider = document.getElementById(`heightSlider${previewNum}`);
+            slider.value = height;
+            adjustPreviewHeight(previewNum, height);
+        }
+        
+        // 讀取文檔內容
+        async function loadDocumentContent(docName, type) {
+            try {
+                const folder = type === 'outline' ? '大綱資料夾' : '正文資料夾';
+                const fileName = `${docName}.txt`;
+                const response = await fetch(`${folder}/${fileName}`);
+                
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                
+                const content = await response.text();
+                return content;
+            } catch (error) {
+                console.error(`無法讀取檔案: ${error}`);
+                return `無法載入 ${docName} 的${type === 'outline' ? '大綱' : '正文'}內容`;
+            }
+        }
+        
+        async function selectDocument(docName) {
+            // 移除其他按鈕的active狀態
+            document.querySelectorAll('.section:first-of-type .doc-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // 為當前按鈕添加active狀態
+            event.target.classList.add('active');
+            
+            const preview1 = document.getElementById('preview1');
+            preview1.innerHTML = `<h3>${docName} - 大綱預覽</h3><p>載入中...</p>`;
+            
+            const content = await loadDocumentContent(docName, 'outline');
+            preview1.innerHTML = `<h3>${docName} - 大綱預覽</h3>`;
+            
+            // 建立保留格式的內容元素
+            const contentDiv = document.createElement('div');
+            contentDiv.textContent = content;
+            contentDiv.style.whiteSpace = 'pre-wrap';
+            contentDiv.style.wordWrap = 'break-word';
+            preview1.appendChild(contentDiv);
+        }
+        
+        async function selectDocument2(docName) {
+            // 移除其他按鈕的active狀態
+            document.querySelectorAll('.section:nth-of-type(3) .doc-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // 為當前按鈕添加active狀態
+            event.target.classList.add('active');
+            
+            const preview2 = document.getElementById('preview2');
+            preview2.innerHTML = `<h3>${docName} - 正文預覽</h3><p>載入中...</p>`;
+            
+            const content = await loadDocumentContent(docName, 'content');
+            preview2.innerHTML = `<h3>${docName} - 正文預覽</h3>`;
+            
+            // 建立保留格式的內容元素
+            const contentDiv = document.createElement('div');
+            contentDiv.textContent = content;
+            contentDiv.style.whiteSpace = 'pre-wrap';
+            contentDiv.style.wordWrap = 'break-word';
+            preview2.appendChild(contentDiv);
+        }
+        
+        function selectAnswer(answer) {
+            // 移除其他按鈕的selected狀態
+            document.querySelectorAll('.answer-btn').forEach(btn => {
+                btn.classList.remove('selected');
+            });
+            
+            // 為當前按鈕添加selected狀態
+            event.target.classList.add('selected');
+            
+            currentAnswer = answer;
+        }
+        
+        function fillAnswer(rowNum, type) {
+            if (!currentAnswer) {
+                alert('請先選擇一個作者名稱！');
+                return;
+            }
+            
+            const docName = docNames[rowNum];
+            const cellId = type + rowNum;
+            
+            // 更新表格顯示
+            document.getElementById(cellId).textContent = currentAnswer;
+            
+            // 更新答案記錄
+            if (!answers[docName]) {
+                answers[docName] = {};
+            }
+            answers[docName][type] = currentAnswer;
+        }
+        
+        function copyResults() {
+            const docOrder = [
+                '委託臨演', '山中避暑', '暫居戀曲', '范姜浩的店長觀察日記',
+                '辨識錯誤：Code Noise', '海上名流派對的潛入委託', '第十四分隊VS夜梟總部+店長的反恐訓練'
+            ];
+            
+            let results = '';
+            docOrder.forEach(doc => {
+                const outline = answers[doc]?.outline || '';
+                const content = answers[doc]?.content || '';
+                results += `${doc}｜大綱：${outline}｜正文：${content}\n`;
+            });
+            
+            navigator.clipboard.writeText(results).then(() => {
+                showNotification();
+            }).catch(err => {
+                console.error('複製失敗:', err);
+                // 備用方案
+                const textArea = document.createElement('textarea');
+                textArea.value = results;
+                document.body.appendChild(textArea);
+                textArea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textArea);
+                showNotification();
+            });
+        }
+        
+        function showNotification() {
+            const notification = document.getElementById('notification');
+            notification.classList.add('show');
+            setTimeout(() => {
+                notification.classList.remove('show');
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
